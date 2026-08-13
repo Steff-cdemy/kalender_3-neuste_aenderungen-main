@@ -1,3 +1,18 @@
+function zeigeKalenderdatum() {
+    const heute = new Date();
+   const heutigerTag = heute.getDate();
+
+   const kalender = document.getElementById("kalenderdatum");
+   const tage = kalender.querySelectorAll("td");
+   tage.forEach(function(td) {
+        if (td.textContent == heutigerTag) {
+        td.classList.add("heute");
+        }
+   });
+}
+
+          
+
 function zeigeDatum() { 
     const heute = new Date(); 
     const formatiertesDatum = heute.toLocaleDateString("de-DE"); 
@@ -86,7 +101,10 @@ function prüfeFeiertag() {
         new Date(jahr, 10, 18),
         new Date(jahr, 11, 25),
         new Date(jahr, 11, 26),
+        new Date(jahr, 7, 6),
     ];
+
+      
 
 const istFeiertag = feiertage.some (f =>
     f.toDateString() === datum.toDateString()
@@ -105,14 +123,12 @@ const istFeiertag = feiertage.some (f =>
     else {
         document.getElementById("feiertag").textContent = "kein";
     }
+
 }
-
-
-    
-
 
 function zeigeDatumOhneJahr() { 
     const heute = new Date();
+
     const datumOhneJahr = heute.toLocaleDateString("de-DE", {day: "2-digit", month: "2-digit"});
     document.getElementById("datumohnejahr").textContent = datumOhneJahr;
 }
@@ -125,6 +141,7 @@ zeigeJahr();
 zeigeDatumOhneJahr();
 wieVielterWochentag();
 prüfeFeiertag();
+zeigeKalenderdatum();
 
 
 
