@@ -11,6 +11,15 @@ body {
     border: 1px solid black;
     padding: 10px;
     margin: 15px;
+    table-layout: fixed;
+    width: 300px;
+    border-collapse: collapse; 
+}
+
+.Kalender th,
+.Kalender td {
+    text-align: center;
+    vertical-align: middle;
 }
 
 tbody tr:hover {
@@ -29,7 +38,6 @@ tbody tr:hover {
 
 table, th, td {
    border: 1px solid black;
-   border-collapse: collapse; 
    padding: 10px;
 }
 thead {
@@ -41,15 +49,21 @@ tbody tr:nth-child(even) {
 
 }
 
+.feiertag {
+    color: red;
+    font-weight: bold;
+    background-color: #ffe5e5;
+}   
+
 .heute {
     background-color: orangered;
     color: white;
     font-weight: bold;
-    border-radius: 50%;
 }
 
-.kalender-tag.feiertag {
-    color: red;
-    font-weight: bold;
-    background-color: #ffe5e5;
+#monatsNavigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 }
